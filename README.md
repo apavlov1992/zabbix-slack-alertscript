@@ -9,7 +9,7 @@ This is simply a Bash script that uses the custom alert script functionality wit
 
 It's based on [zabbix-slack-alertscript](https://github.com/ericoc) from [ericoc](https://github.com/ericoc) for the bash script and [zabbix-notify](https://github.com/v-zhuravlev/zabbix-notify) from [v-zhuravlev](https://github.com/v-zhuravlev) for the slack's attachments used in Zabbix actions templates with a slight touch of [bash-slack](https://github.com/sulhome/bash-slack) from [sulhome](https://github.com/sulhome)
 
-#### Versions
+### Versions
 This works with version 3.x - should works with 2.x and maybe with 1.8+
 
 Installation
@@ -77,9 +77,11 @@ Then, create a "Slack" user on the "Users" sub-tab of the "Administration" tab w
 Finally, an action can then be created on the "Actions" sub-tab of the "Configuration" tab within the Zabbix servers web interface to notify the Zabbix "Slack" user ensuring that the "Subject" is "PROBLEM" for "Default message" and "RECOVERY" should you choose to send a "Recovery message".
 
 Default subject
+
 	{TRIGGER.STATUS}
 
 Default Message for operations
+
 	{
 	            "fallback": "[[{HOST.NAME}:{TRIGGER.NAME}:{STATUS}]]",
 	            "pretext": "New Alarm",
@@ -107,6 +109,7 @@ Default Message for operations
 	        }
 
 Default Message for Recovery operations
+
 	{
 	            "fallback": "[[{HOST.NAME}:{TRIGGER.NAME}:{STATUS}]]",
 	            "pretext": "Cleared",
